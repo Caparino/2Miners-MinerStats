@@ -8,7 +8,7 @@ WIDTH = 600
 def test_function(entry):
 	print("This is the entry:", entry)
 
-def format_repsonse(stats):
+def format_response(stats):
     try:
         CMH = round(int(stats['currentHashrate']) / 1000000, 2)
         AMH = round(int(stats['hashrate']) / 1000000, 2)
@@ -46,7 +46,7 @@ def get_stats(wallet):
     response = requests.get('https://'+str(tkvarq.get())+'.2miners.com/api/accounts/'+str(entry.get()))
     #print(response.json())
     stats = (response.json())
-    label['text'] = format_repsonse(stats)
+    label['text'] = format_response(stats)
 
 # def get_stats(wallet):
 #     url = 'http://api.bsod.pw/api/wallet'
@@ -54,7 +54,7 @@ def get_stats(wallet):
 #     response = requests.get(url, params=params)
 #     stats = (response.json())
 #
-#     label['text'] = format_repsonse(stats)
+#     label['text'] = format_response(stats)
 
 
 #0xe4c9c956c9d8cffec5f01bec09541e4c892dbd15
